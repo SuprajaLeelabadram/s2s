@@ -1,0 +1,31 @@
+{% extends 'shop/base.html' %}
+{% block title %}View | S2S{% endblock title %}
+{% load static %}
+{% block content %}
+
+<main class="mt-5 pt-4 box-element">
+    <div class="container dark-grey-text mt-5">
+      <div class="row wow fadeIn">
+        <div class="col-md-6 mb-4">
+          <img src="{{object.imageURL}}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="p-4">
+            <p><b>{{object.art_name}}</b></p>
+            <hr>
+            <p class="lead">
+              <span>${{ object.price }}</span>
+            </p>
+            <p>Artist : "{{object.artist_name}}"</p>
+            <p>Dimensions : "{{object.dimension}}"</p>
+            <form class="d-flex justify-content-left">
+               <button data-product={{object.id}} data-action="add" class="btn btn-primary btn-md my-0 p update-cart show">Add to cart</button>
+            </form>
+           </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </main>
+
+  {% endblock content %}

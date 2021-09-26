@@ -1,0 +1,32 @@
+{% extends 'shop/base.html' %}
+{% block title %} Customize | S2S {% endblock %}
+{% block content %}
+<br>
+<form method="post" action="/customize/" class="box-element">
+  {% csrf_token %}
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="name" name="name">
+    <label for="name">Name</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="phone" class="form-control" id="phone" name="phone">
+    <label for="phone">Phone Number</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="email" name="email">
+    <label for="email">Email address</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" id="dimensions" name="dimensions">
+    <label for="dimensions">Dimensions required in cm</label>
+  </div>
+  <br>
+  <br>
+  <div class="mb-3">
+    <label for="formFile" class="form-label" id="img">Upload Image</label>
+    <input class="form-control" type="file" id="img" name="img">
+  </div>
+  <button class="btn btn-primary" type="success">Submit</button>
+  <h3 style="text-align:center">You will be contacted through email for further details.</h3>
+</form>
+{% endblock content %}

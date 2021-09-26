@@ -1,0 +1,39 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}Home | S2S{% endblock title %}
+{% block css %}
+<style>
+
+  .test{
+    width: 300px;
+    height: 300px;
+  }
+  .circleborder {
+    padding: 5px;
+    border: 4px solid #d5a770;
+    display: inline-block;
+  }
+</style>
+ {% endblock css %}
+
+  {% block content %}
+
+
+<br>
+<br>
+
+
+
+<div>
+  <div class="row">
+    {% for product in products %}
+    <div class="col-lg-4">
+      <a href="{{ product.get_absolute_url }}"><img class="rounded-circle test circleborder" src="{{product.imageURL}}"></a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+{% endblock content %}
